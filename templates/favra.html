@@ -1,0 +1,283 @@
+{% extends 'index.html' %}
+
+
+
+
+
+
+
+{% block 'navbar' %}
+<style type="text/css">
+    .logout:hover{
+    background-color: white;
+    color: black;
+}
+.logout{
+    color:black!important;
+    text-decoration: none!important;
+}
+</style>
+ <div class="header">   
+        <nav class="navbar navbar-expand-lg navbar-light  fixed-top" style="background-color: #6EF913">
+            <a class="navbar-brand" href="#">IndianPropertybuy/sell   Welcome ({{request.user | upper }})  </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active" >
+                        <a class="nav-link" href="/buyer/home/" ><span class="fa fa-home" aria-hidden="true" aria-setsize="23px"></span>&nbsp;&nbsp;Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footerdiv">About</a>
+                    </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#contactus">Contact Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            State
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+
+                </ul>
+                <form  action="{% url 'buyer:search' %}" method="GET" class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" name="keyword" aria-label="Search">&nbsp;
+                    <button class="btn btn-outline-success my-2 my-sm-0 logout" type="submit">Search</button>&nbsp;&nbsp;&nbsp;
+                
+                    
+                     <div><button type="button" class="btn btn-outline-success logout"><a href="/buyer/profile1/" style="text-decoration: none;color: black;">Profile</a></button></div>    &nbsp;&nbsp;&nbsp;                              
+                    <div><button type="button" class="btn btn-outline-success logout"><a href="/logout/" style="text-decoration: none;color: black;">Logout</a></button></div>
+                </form>
+            </div>
+
+        </nav>
+
+    </div>
+
+
+{%  endblock %}
+{% block 'bodyimg' %}
+<body>
+
+
+
+{% endblock %}
+{% block 'search' %}
+{% endblock%}
+
+{% block 'productBlock' %}
+
+<style type="text/css">
+.logout1:hover{
+    background-color: white!important;
+    color: black;
+    text-decoration: none!important;
+}
+.logout1{
+    color:black;
+    text-decoration: none!important;
+      padding: 10px 25px;
+      font-size: 16px;
+      border-radius: 5px;
+        cursor: pointer;
+          margin: 4px 2px;
+            background-color: #66ffff;
+
+
+}
+
+
+</style>
+
+<div class=" centerpart" style="padding-top: 100px;">
+        <!-- <h1 style="color: #2AF307;">Latest Properties<span class="badge badge-pill badge-success">New</span></h1> -->
+        <div class="row">
+            <td class="col3">
+                &nbsp&nbsp&nbsp&nbsp&nbsp<h1 style="color: #2AF307;">Favourite You Like<sup style="color: red">{{ cnt }}</sup> </h1>
+            </td>
+            <td class="col3">
+                <span class="badge badge-pill ">New</span>
+            </td>
+
+        </div>
+    </div>
+    
+
+
+    <div class="row product2">
+        {% for i in pobjs %}  
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                 <div id="myslideshow" class=" carousel slide carousel-fade " data-ride="carousel">
+                       <span style="padding-left: 250px;font-size: 30px" > <a href="{% url 'buyer:cartdel' id=i.id %}">Remove</a></span>                           
+
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active">
+                            <a href="#"><img class="card-img-top" src="{{ i.pro_img.url }}" height="380px" width="380px" class="d-block" alt=""></a>    
+                        </div>
+                        <div class="carousel-item">
+                            <a href="#"><img class="card-img-top" src="{{ i.pro_img2.url }}" height="380px" width="380px" class="d-block" alt=""></a>    
+                        </div>
+                        <div class="carousel-item">
+                            <a href="#"><img class="card-img-top" src="{{ i.pro_img3.url }}" height="380px" width="380px" class="d-block" alt=""></a>    
+                        </div> 
+                                     
+                        </div>   
+                         
+                    </div>
+                <div class="card-body">
+
+                            <tr>
+                                <th >OWNER</th>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <th >RS </th>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <th >   BHK</th>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <th>PLOT/FLAT</th>&nbsp
+                             
+                            </tr>
+
+                <div class="row">
+                  
+
+<!--                   <div class="col"><h4 class="card-title">
+                    <a href="#">{{ i.name }}</a>
+                  </h4></div> -->
+                  <div class="col"><h5>{{ i.name | upper}}</h5></div>
+                  <div class="col"><h5>{{ i.price }}</h5></div>
+                  <div class="col"> <p class="card-text">{{ i.bhk }}</p></div>
+                  <div class="col"><h3>{{i.pro_type}}</h3></div><br>
+                  
+
+                </div>
+                <center><button class=" logout1" ><a href="{% url 'buyer:seller_de' id=i.id %}" style="text-decoration:none;color: #000000">More</a> </button></center>
+
+                                   
+
+                </div>
+                
+              </div>
+            </div>       
+           
+        {% endfor %}
+ </div>
+</div>
+ 
+
+{% endblock %}
+
+
+
+
+{% block 'contact' %}
+
+    <section class="container-fluid make" id="contactus">
+        <div class="container headings text-center">
+            <h1>CONTACT US</h1>
+            <p class="text-capitalize">We are Here To Help And Answer Any Question You Might Have .
+                We Look Forward To Hearing From You </p>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-10 offset-lg-2 offset-md-2 offset-1">
+
+                <form method="POST" action="/contact/">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="username" required autocomplete="off"
+                            placeholder="Enter Your Name" value="{{ubj.first_name | upper}}" name="nameuser">
+                    </div>
+                    
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" required autocomplete="off"
+                                placeholder="Enter Email " value="{{ubj.email }}" name="email">
+                        </div>
+                    
+                            <div class="form-group">
+                                <input type="number" name="phone" class="form-control" id="mobile" required autocomplete="off"
+                                    placeholder="Enter Mobile Number " value="{{data.mobile }}">
+                            </div>
+                            <div class="form-group">
+
+                                <textarea class="form-control" rows="4" id="comment"
+                                    placeholder="Enter Your Message " name="msg"></textarea>
+                            </div>
+                            <div class="d-flex justify-content-center form-button">
+                                <input type="submit" class="btn btn-warning">
+                            </div>
+                        </form>
+
+            </div>
+        </div>
+
+    </section>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Hover Rows</h2>
+  <p>The .table-hover class enables a hover state (grey background on mouse over) on table rows:</p>            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in pobjs %}
+      <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.price}}</td>
+        <td>{{i.bhk}}</td>
+        <td>{{i.pro_type}}</td>
+
+        <td>john@example.com</td>
+      </tr>
+      {% endfor  %}
+
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
+
+ <div class="col"><h5>{{ i.name | upper}}</h5></div>
+                  <div class="col"><h5>{{ i.price }}</h5></div>
+                  <div class="col"> <p class="card-text">{{ i.bhk }}</p></div>
+                  <div class="col"><h3>{{i.pro_type}}</h3></div><br> -->

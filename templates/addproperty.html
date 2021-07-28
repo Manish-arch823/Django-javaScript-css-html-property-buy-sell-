@@ -1,0 +1,204 @@
+{% extends 'signup.html' %}
+
+
+ {% block 'navbar' %} 
+
+ 	      <nav class="navbar navbar-expand-lg navbar-light fixed-top " style="background-color: #6EF913">
+            <a class="navbar-brand" href="#">IndianPropertybuy/sell    Welcome ({{request.user | upper }})  </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active" >
+                        <a href="/seller/home/" class="nav-link"  ><span class="fa fa-home" aria-hidden="true" aria-setsize="23px"></span>&nbsp;&nbsp;Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footerdiv">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            State
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="##footerdiv">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">&nbsp;
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>&nbsp;&nbsp;&nbsp;
+                    
+
+                </form>
+            </div>
+        </nav>
+      </div>
+  {% endblock%} 
+
+
+{% block 'Form1' %}
+				<h2>Add Property </h2>
+
+						<div id="error_message" ></div>
+						<form method="POST" enctype="multipart/form-data"  id="myform" onsubmit="return validation()">
+							{% csrf_token %}
+								<div class="input_field">
+									<input type="text" placeholder="Name" id="name" name="name">
+								</div>
+								<div class="input_field">
+									<input type="text" placeholder="Mobile" id="mobile" name="mobile">
+								</div>
+																									
+								<div class="input_field">
+									<input type="text" placeholder="State" id="state" name="state">
+								</div>
+								<div class="input_field">
+									<input type="text" placeholder="City" id="city" name="city">
+								</div>	
+								<div class="input_field">
+									<textarea placeholder="Full Address" id="Full Address" name="full_address" rows="4" cols="50" style=" overflow: hidden;">		
+									</textarea>
+									<!-- <input type="area" rows="4" cols="50" name=""style=" overflow: hidden;"> -->
+								</div>
+
+								<div>
+
+								</div>
+								<div class="input_field">
+									<input type="text" placeholder="Pincode" id="pincode" name="pincode">
+								</div>
+								<div class="input_field">
+									<input type="text" placeholder="bhk" id="bhk" name="bhk">
+								</div>
+								<div class="input_field">
+									<input type="text" placeholder="Price" id="Price" name="price">
+								</div>
+								<div>
+
+									Select Role: <select name="role">
+										<option value="Plot">Plot</option>
+										<option value="Flat">Flat</option>
+									</select><br>
+									</div>	
+						        <div class="form-group">
+						          	<label >Upload Image</label>
+						          	<input type="file" id="upimage"  name="pImage">
+						          	 <label >Upload Image 2</label>
+						          	<input type="file" id="upimage"  name="pImage2">
+						          	<label >Upload Image 3</label>
+						          	<input type="file" id="upimage"  name="pImage3">
+						          	<label >Upload Image 4</label>
+						          	<input type="file" id="upimage"  name="pImage4">
+						          	<label >Upload Image 5</label>
+						          	<input type="file" id="upimage"  name="pImage5">
+						        </div>														
+									
+
+						<!-- 		<div class="input_field">
+									<textarea id="message" placeholder="message"></textarea>
+								</div>	 -->
+								<center><div class="btn">
+									<input type="submit" name="">									
+								</div></center>	
+					
+							</form>	
+
+							
+<!-- <script type="text/javascript">
+		function validation(){
+
+		var name=document.getElementById('name').value
+		var mobile=document.getElementById('mobile').value
+		var state=document.getElementById('state').value
+
+		var city = document.getElementById('city').value
+		var Full Address = document.getElementById('Full Address').value
+		var pincode = document.getElementById('pincode').value
+
+		var bhk =document.getElementById('bhk').value
+		var Price =document.getElementById('Price').value
+
+		var upimage =document.getElementById('upimage').value
+
+		//var message=document.getElementById('message').value
+		var error_message =document.getElementById("error_message")
+
+
+		
+		
+		var text
+
+		error_message.style.padding ="10px";
+
+
+		if (name.length <5) {
+			text ="Please Enter Valid Name"
+			error_message.innerHTML =text;
+			return false;
+
+		}
+
+		if (email.indexOf("@") == -1 || email.length<6) {
+			text ="Please Enter Valid Email"
+			error_message.innerHTML =text;
+			return false;
+
+		}
+
+		if (isNaN(phone) || phone.length !=10) {
+			text ="Please Enter Valid Phone number"
+			error_message.innerHTML =text;
+			return false;
+
+		}
+		if(a==""){
+			//document.getElementById("messages").innerHTML="******please fill this password"
+			text="please fill this password"
+			error_message.innerHTML =text;
+			return false;
+		}
+		if(a.length < 8 ){
+			// document.getElementById("messages").innerHTML=" password length must be greater then 8 characters "
+			text="password length must be greater then 8 characters"
+			error_message.innerHTML =text;
+			return false;
+		}
+		if(a.length > 20 ){
+			//document.getElementById("messages").innerHTML=" password length must be smaller then 20 characters "
+			text="password length must be smaller then 20 characters"
+			error_message.innerHTML =text;
+			return false;
+		}
+		if(a!=b){
+			//document.getElementById("messages").innerHTML=" password are not same  "
+			text=" password are not same"
+			error_message.innerHTML =text;
+			return false;
+
+		}		
+		// if (message.length <= 140){
+		// 	text ="Please Enter more than 140 characters"
+		// 	error_message.innerHTML =text;
+		// 	return false;
+
+		// }
+
+		alert("Form submitted Successfully")	
+		
+		return true
+
+	}
+								
+
+</script> -->
+{% endblock %}
+

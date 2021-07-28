@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom File iNput</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+	*{
+		margin:0;
+		padding: 0;
+		background: navy;
+
+	}
+	.wrapper{
+		height: 300px;
+		width: 300px;
+		position:relative;
+		border:solid : 5px solid #fff;
+		border-radius: 50%;
+		background:url('Girl.jpg');
+		background-size: 100% 100%;
+		margin: 100px auto;
+		overflow: hidden; 
+
+	}
+
+	.my_file{
+		position: absolute;
+		bottom:0;
+		outline:none;
+		color:  transparent;
+		width:100%;
+		box-sizing: border-box;
+		padding: 15px 120px;
+		cursor:pointer;
+		transition: 0.5s;
+
+	}
+	.my_file::webkit-file-upload-button{
+		visibility: hidden;
+
+	}
+	.my_file::before{
+		content:'';
+	}
+
+</style>
+<body>
+	<div class="wapper">
+			<input type="file" class="my_file">
+	</div>	
+</body>
+</html>

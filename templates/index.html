@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link  href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+</script> 
+
+    <title>IndianPropertybuy/sell.com</title>
+<!--     <style src="{% static 'style.css' %}"></style> -->
+
+        <style type="text/css">
+            @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+    outline:none;
+    font-family: 'josefin Sans',sans-serif; 
+}
+body {
+ /* overflow-y: hidden;*/ /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+/*
+body { overflow: hidden;*/ /* Hide scrollbars */ 
+
+/*.header{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,168,255,0.3),rgba(0,168,255,0.3)),  url('home2.jpg');
+    background-color: url('home2.jpg');
+    
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    clip-path: polygon(100% 0%,100% 75%,50% 100%,0 75%,0 0);
+
+}*/
+
+.imgmain{
+    width: 203.2vh;
+    height: 155vh;
+    /*background-size: 100% 100%;*/
+    background-repeat: no-repeat;
+    position: relative;
+    padding-bottom: 0px;
+    opacity: 0.7;
+
+    /*href="{% static 'css/style.css' %}"*/
+    background-image: url("{{ STATIC_URL }}image/home2.jpg");
+
+}
+.imgmain:hover{
+    opacity: 1.0;
+}
+.imgmain .butcenter{
+    position: absolute;
+    top:35%;
+    left:33%;
+    opacity: 1.0;
+
+}
+#bg:hover{
+    opacity: 1.0;
+}
+
+
+#bg{
+    background-size: 1800px 900px;
+    background-repeat: no-repeat;
+    background-position: top;
+   /* background-attachment: fixed;*/
+}
+.search1{
+    height: 50px!important;
+    width: 600px!important;
+} 
+.search2{
+    height: 50px!important;
+    width: 150px!important;
+    background-color: #ff6699!important;
+
+
+}
+
+
+
+
+
+.container{
+    margin-top: 15px;
+}
+.row{
+    margin-top: 15px;
+}
+
+/* Contact Page  Start */
+
+.make{
+    width: 100%;
+    height: 100vh;
+    padding:80px ;
+    position: relative; 
+}
+
+.make:before{
+    content:"";
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom:0;
+    right: 0;
+    background: linear-gradient(330deg,  #47d147 55%, #fff 0%);
+    z-index: -1; 
+}
+
+.form-button:hover{
+    color:#06f8e4;
+}
+
+.make2{
+    
+    padding:85px 0;
+    position: relative; 
+}
+
+
+
+/* Contact Page End */
+
+
+/* Footer Page Start  */
+
+
+
+
+
+.footersection{
+    width: 100%;
+    height: auto;
+    padding: 70px 0 20px 0;
+    background:      #47d147;
+    position:relative;
+}
+.footersection p{
+    color: #fff;
+
+}
+
+.footersection li a{
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-weight: 400;
+    color: #fff;
+    text-transform: capitalize;
+
+}
+
+.footersection h3{
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 1.2rem!important;
+    font-weight: 600;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.4)
+}
+
+#myBtn{
+    /*display: none;*/
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    z-index: 99;
+    border: none;
+    color: #fff;
+    background: #00abff;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+#myBtn:hover{
+    background: #606060;
+
+}
+
+
+
+                  /*Login page*/
+
+.make3{
+    padding: 20px 0px 0 50px;
+
+}
+
+
+/* Footer Page End */
+
+
+/*Login Page */
+
+.textleft{
+     top:30%;
+     left: 10%;
+     padding-bottom: 100px;
+     margin-bottom:50px;
+
+}
+
+.textleft1{
+    top:23%;
+    right:5%;
+    padding: 15px 15px 100px 15px;
+    margin-bottom:50px;
+
+}
+.card{
+    /*height: 400px*/
+    border-color:  #ffffff!important;
+}
+
+
+
+/*Login Page End */
+
+
+
+/*signup Page start */
+.wrapper h2{
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color:#332902;
+}
+
+.wrapper .input_field{
+    margin-bottom: 10px;
+
+
+}
+.wrapper .input_field input[type="text"],
+.wrapper textarea{
+    width: 100%;
+    border:1px solid #e0e0e0;
+    padding: 10px;
+
+}
+.wrapper .input_field input[type="password"],
+.wrapper textarea{
+    width: 100%;
+    border:1px solid #e0e0e0;
+    padding: 10px;
+
+}
+
+.wrapper textarea{
+    height: 80px;
+    resize:none;
+}
+.wrapper .btn input[type="submit"]{
+    border:0;
+    margin-top: 15px;
+    padding: 10px;
+    width:100%;
+    background: #99ff99;
+    color:#332902;
+    text-transform: uppercase;
+    letter-spacing: 
+    font-weight:bold;
+    border-radius: 25px;
+    cursor:pointer; 
+}
+
+.wrapper #error_message{
+    margin-bottom: 20px;
+    padding: 0px;
+    background:#fe8b8e;
+    text-align: 14px;
+    font-size: 18px;
+    color:darkblack;
+    transition: all 0.5 ease;
+
+}
+
+.textleft2{
+    top:50%;
+    right:0%;
+    padding: 15px 15px 100px 15px;
+    margin-bottom:50px;
+    margin-top:138px;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/*Dropdown List*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.logout:hover{
+    background-color: white;
+    color: black;
+}
+.logout{
+    color:black;
+    text-decoration: none!important;
+}
+
+
+
+
+
+/*Dropdown List*/
+
+
+
+
+
+
+        </style>
+</head>
+{% block 'bodyimg' %}
+<body id="bg" class="" 
+
+ style="background-image: url('{% static "image/home2.jpg"%}')";>
+ {% endblock %}
+  {% block 'navbar' %}  
+
+ <div class="header">   
+        <nav class="navbar navbar-expand-lg navbar-light  fixed-top" style="background-color: #6EF913">
+            <a class="navbar-brand" href="#">IndianPropertybuy/sell</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active" >
+                        <a class="nav-link" href="/seller/home/" ><span class="fa fa-home" aria-hidden="true" aria-setsize="23px"></span>&nbsp;&nbsp;Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footerdiv">About</a>
+                    </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#contactus">Contact Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            State
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">&nbsp;
+                    <button class="btn btn-outline-success logout my-2 my-sm-0" type="submit">Search</button>&nbsp;&nbsp;&nbsp;
+                 
+                    <div><button type="button" class="btn btn-outline-success logout"><a href="/logout/" style="text-decoration:none;color: black" >Logout</a></button></div> &nbsp;&nbsp;&nbsp;
+                </form>
+
+
+
+            </div>
+        </nav>
+    </div>
+{% endblock %}
+
+
+</div>
+{% block 'search' %}
+
+<div class=" imgmain">
+    <div class="butcenter">
+          <form class="form-inline" action="/action_page.php">
+            <input class="form-control mr-sm-2 search1 " type="text" placeholder="Search">
+            <button class="btn btn-success search2" type="submit">Search</button>
+         </form>
+    
+    </div>
+    
+</div>
+{% endblock  %}
+
+
+
+
+
+{% block 'productBlock' %}
+
+    <div class="container centerpart" >
+        <!-- <h1 style="color: #2AF307;">Latest Properties<span class="badge badge-pill badge-success">New</span></h1> -->
+        <div class="row">
+            <td class="col3">
+                <h1 style="color: #2AF307;">Latest Properties</h1>
+            </td>
+            <td class="col3">
+                <span class="badge badge-pill ">New</span>
+            </td>
+
+        </div>
+        <div class="row">
+
+            <td class="col-4">
+                <div class="card" style="width: 23rem;">
+                    <img class="card-img-top" src="image1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </td>&nbsp;&nbsp;
+            <td class="col-4">
+                <div class="card" style="width: 23rem;">
+                    <img class="card-img-top" src="image2.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </td>&nbsp;&nbsp;
+            <td class="col-4">
+                <div class="card" style="width: 23rem;">
+                    <img class="card-img-top" src="image3.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </td>&nbsp;&nbsp;
+        </div>
+
+        <div class="row">
+
+            <td class="col-4">
+                <div class="card" style="width: 23rem;">
+                    <img class="card-img-top" src="image4.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </td>&nbsp;&nbsp;
+            <td class="col-4">
+                <div class="card" style="width: 23rem;">
+                    <img class="card-img-top" src="image1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </td>&nbsp;&nbsp;
+            <td class="col-4">
+                <div class="card" style="width: 23rem;">
+                    <img class="card-img-top" src="image5.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </td>&nbsp;&nbsp;
+        </div>
+        <div class="row">
+
+            <td class="col-4">
+                <div class="card" style="width: 23rem;">
+                    <img class="card-img-top" src="image6.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </td>&nbsp;&nbsp;
+            <td class="col-4">
+                <div class="card" style="width: 23rem;">
+                    <img class="card-img-top" src="image6.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </td>&nbsp;&nbsp;
+            <td class="col-4">
+                <div class="card" style="width: 23rem;">
+                    <img class="card-img-top" src="image3.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </td>&nbsp;&nbsp;
+        </div>
+    </div>
+{% endblock %}
+
+{% block 'contact' %}
+
+    <section class="container-fluid make" id="contactus">
+        <div class="container headings text-center">
+            <h1>CONTACT US</h1>
+            <p class="text-capitalize">We are Here To Help And Answer Any Question You Might Have .
+                We Look Forward To Hearing From You </p>
+
+        </div>
+       <div class="row">
+            <div class="col-lg-8 col-md-8 col-10 offset-lg-2 offset-md-2 offset-1">
+
+                <form method="POST" action="/contact/">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="username" required autocomplete="off"
+                            placeholder="Enter Your Name" name="name">
+                    </div>
+                    
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" required autocomplete="off"
+                                placeholder="Enter Email" name="email">
+                        </div>
+                    
+                            <div class="form-group">
+                                <input type="number" name="phone" class="form-control" id="mobile" required autocomplete="off"
+                                    placeholder="Enter Mobile Number " >
+                            </div>
+                            <div class="form-group">
+
+                                <textarea class="form-control" rows="4" id="comment"
+                                    placeholder="Enter Your Message " name="msg"></textarea>
+                            </div>
+                            <div class="d-flex justify-content-center form-button">
+                                <input type="submit" class="btn btn-warning">
+                            </div>
+                        </form>
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+    <div class="container-fluid make2 ">
+        <div class="container  text-center">
+            <h1>CUSTOMER CARE NUMBER</h1>
+            <div>
+                Trouble with something?
+                If you're stuck somewhere or confused about anything, then please tell us we're always online
+                between 9am to 7pm. Otherwise, drop us an email at support@propertybazaar.com
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <section class="footersection" id="footerdiv">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 footer-div">
+                    <div>
+                        <h3>ABOUT US</h3>
+                        <p>Property Bazaar is a fast growing real estate website among the various property sites in
+                            India. It's established to help you Buy, Rent, Sell Property in India. Hundreds of new real
+                            estate projects in India having new and resale properties for sale are being added every
+                            month in our database. </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 footer-div text-center">
+                    <div style="color: #fff;">
+                        <h3 >CALL US &nbsp;&nbsp;&nbsp;<span class="fa fa-phone" aria-hidden="true"></span></h3>
+                        <li>91123456789 &nbsp;&nbsp;<a class="fa fa-phone" aria-hidden="true></a></li>
+                        
+                        <li>91234567864 &nbsp;&nbsp;<a class="fa fa-phone" aria-hidden="true"></a></li>
+                        <li>91234567864 &nbsp;&nbsp;<a class="fa fa-phone" aria-hidden="true"></a></li>
+                        <li>91234567864 &nbsp;&nbsp;<a class="fa fa-phone" aria-hidden="true"></a></li>
+                        <li>91234567864 &nbsp;&nbsp;<a class="fa fa-phone" aria-hidden="true"></a></li>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-12 footer-div">
+                    <div>
+                        <h3 >GMAIL &nbsp;&nbsp;&nbsp;<span class="fa fa-envelope" aria-hidden="true"></span></h3>
+                        <p class="fa fa-envelope" aria-hidden="true">&nbsp;&nbsp;indianpropertybuyhelpline@gmail.com
+
+                        </p>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="mt-5 text-center">
+                <p>
+                    Copyright <i class="fa fa-copyright" aria-hidden="true" style="color:#fff;"> </i> 2019 All rights
+                    reserved | This Template is made with love by Manish SIngh
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- <div class="container-fluid">
+        <img src="home1.jpeg" height="30%" width="65%">
+      </div> -->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+</nav>

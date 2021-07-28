@@ -1,0 +1,82 @@
+{% extends 'profile.html' %}
+
+
+
+{% block 'profile' %}
+
+	<div class="container">
+		<div class="row d-flex justify-content-center">
+			<div class="col-md-10 mt-5 pt-5">
+				<div class="row z-depth-3">
+					<div class="col-sm-4 bg-info rounded-left">
+						<div class="card-block text-center text-white">
+							<i class="fas fa-user-tie fa-7x mt-5"></i>
+							<h2 class="font-weight-bold mt-4">Nickson</h2>
+							<p>Web Designer</p>
+                              <form method="post" action="/image/"  enctype="multipart/form-data"  >
+                                {% csrf_token %}
+    							<i class="far fa-edit fa-2x mb-4">
+                                         <div class="form-group">
+                                  <label for="pwd">Upload Image</label>
+                                  <input type="file" class="form-control"  name="pImage">
+                              </form>
+                                </div>
+
+
+                           </i>
+                       
+						</div>
+						
+					</div>
+					<div class="col-sm-8 bg-white rounded-right">
+						<h3 class="mt-3 text-center">Information</h3>
+						<form method="post"   enctype="multipart/form-data"  >
+						
+						{% csrf_token %}
+							
+								<div class="row ">
+									<div class="col-sm-6">
+										<p class="font-weight-bold">First name</p>
+										<h6 class="text-muted"><input type="text" class="form-control" name="firstname" value="{{upObj.firs_tname | upper}}"></h6>	
+									</div>
+                                    <div class="col-sm-6">
+                                        <p class="font-weight-bold">Last Name</p>
+                                        <h6 class="text-muted"><input type="text" class="form-control" name="lastname" value="{{upObj.last_name | upper}}"> </h6>    
+                                    </div>                                    
+
+								</div>
+								<h4 class="mt-3"></h4>
+								<hr class="bg-primary">
+								<div class="row">
+									<div class="col-sm-6">
+										<p class="font-weight-bold">Email </p>
+										<h6 class="text-muted"><input type="text" class="form-control" name="email" value="{{upObj.email}}"></h6>	
+									</div>
+                                   
+                                    <div class="col-sm-6  >
+                                        <p class="font-weight-bold">Phone</p>
+                                        <h6 class="text-muted"><input type="text" class="form-control" name="phone" value="{{uObj.mobile}}"></h6>    
+                                    </div>
+                                  
+								</div>
+							<input type="submit" value="Update">
+
+								
+						</form>
+
+						<hr class="bg-primary">
+					</div>
+				</div>
+					
+				</div>
+			</div>
+
+		</div>
+	</div>
+{% endblock %}
+
+
+
+
+
+
